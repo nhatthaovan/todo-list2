@@ -1,6 +1,7 @@
 cách chạy 
 cần có các app sau:
 + Vscode
+
         Cài đặt tool:
         - Live Server (trong mục Extensions  Ctrl + shift + X)
         Sau khi mở Folder có project tiến hành cài đặt trong Teminal ( ctrl + shift + `)
