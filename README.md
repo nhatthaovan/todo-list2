@@ -17,3 +17,4 @@ cần có các app sau:
     
 + MongoDB
 + MongoDB Compass
++ Nodejs
