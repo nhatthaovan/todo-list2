@@ -1,0 +1,102 @@
+<!-- tạo giao diện trang home (todolist) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Concert+One&family=Signika:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="site">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="item"><a href="/" style="color: beige;">ToDo List</a></div>
+            </div>
+        </div>
+
+        <div class="listtodo">
+            <div class="ui container2">
+                <form id="form" action="/add" class="ui form" method="POST">
+                    <div class="three fields">
+                        <div class="field">
+                            <label for="label" class="ui header green">To do</label>
+                            <input type="text" name="name" placeholder="Enter todo" value="" id="name">
+                        </div>
+                        <div class="field">
+                            <label for="label" class="ui header green">Description</label>
+                            <input type="text" name="description" placeholder="Enter description" value="" id="description">
+                        </div>
+
+                        <div class="field">
+                            <label for="label" class="ui header green">Time</label>
+                            <input type="time" name="time" placeholder="Enter time" value="" id="time">
+                        </div>
+                        <div class="field">
+                            <label for="label" class="ui header green">Date</label>
+                            <input type="date" name="date" placeholder="Enter date" value="" id="date">
+                        </div>
+                    </div>
+                    <!-- <div class=" one fields"> -->
+                    <div class="field fluid">
+                        <button type="submit" class="ui button fluid green" style="width:30%; margin: auto ;">Save</button>
+                    </div>
+                    <!-- </div> -->
+                </form>
+                <br>
+                <br>
+                <br>
+
+                <table class="ui table green">
+                    <thead>
+                        <tr>
+                            <th>Todo</th>
+                            <th>Description</th>
+                            <th>Time</th>
+                            <th>Date</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% teams.forEach((team)=>{%>
+                            <tr>
+                                <td id="teamName">
+                                    <%- team.name %>
+                                </td>
+                                <td id="teamdescription">
+                                    <%- team.description %>
+                                </td>
+
+                                <td id="teamTime">
+                                    <%- team.time %>
+                                </td>
+                                <td id="teamDate">
+                                    <%- team.date %>
+                                </td>
+                                <td><a class="ui button green editBtn" href="/edit/<%= team._id %>"><i class="edit white icon"></i></a></td>
+                                <td><a class="ui button green actnBtn" href="/<%= team._id %>"><i id="delete" class="minus red icon"></i></a></td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
